@@ -1,0 +1,90 @@
+@import 'settings';
+
+.alignleft {
+  float: left;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alignright {
+  float: right;
+}
+
+.article-links {
+  @extend %list-reset;
+
+  li {
+    display: inline-block;
+
+    &:not(:last-child)::after {
+      content: '|';
+      margin: 0 10px;
+    }
+  }
+}
+
+.comment-list {
+  @extend %list-reset;
+}
+
+.comment-meta {
+  display: flex;
+}
+
+.gallery {
+  br {
+    display: none;
+  }
+
+  &-item {
+    display: block;
+    margin: 0;
+    text-align: center;
+    vertical-align: top;
+  }
+
+  &-icon {
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+p:empty {
+  display: none;
+}
+
+.screen-reader-text {
+  @extend %sr-only;
+
+  &:focus {
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 1rem;
+    clip: auto !important;
+    top: 5px;
+    left: 5px;
+    z-index: 100000;
+    box-shadow: 0 0 2px 2px rgba($color-black, 0.6);
+    background-color: $color-white;
+    color: $color-major;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: normal;
+    text-decoration: none;
+  }
+}
+
+.wp-caption {
+  max-width: 100%;
+}
+
+.wp-video {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}

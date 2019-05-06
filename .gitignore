@@ -1,0 +1,16 @@
+# Compiled
+httpdocs
+dist
+
+# Legacy
+_legacy
+
+# Mapping
+*.map
+
+# NPM
+node_modules
+
+# OS
+.DS_Store
+Thumbs.db

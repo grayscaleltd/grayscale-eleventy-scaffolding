@@ -1,0 +1,77 @@
+@import 'settings';
+
+html {
+  box-sizing: border-box;
+  font-family: $font-content;
+  @include gs-breakpoint-loop($font-size-roots) using ($item) {
+    font-size: $item / 16px * 100%;
+  }
+  line-height: gs-is-typegrid($font-leading-ratio * 1rem, $font-leading-ratio);
+  word-wrap: break-word;
+}
+
+@if $typegrid {
+  body {
+    @include gs-textgrid;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+*:last-child {
+  margin-bottom: 0;
+}
+
+::selection {
+  background: $color-major;
+  color: $color-white;
+}
+
+address, p {
+  margin-top: 0;
+  margin-bottom: gs-is-typegrid(gs-spacer(0.5), 20px);
+}
+
+audio, canvas, img, svg, video {
+  height: auto;
+  max-width: 100%;
+}
+
+blockquote, figure, ol, ul {
+  margin-top: gs-is-typegrid(gs-spacer(0.75), 30px);
+  margin-bottom: gs-is-typegrid(gs-spacer(0.75), 30px);
+}
+
+button, input, textarea {
+  max-width: 100%;
+  padding: 0;
+  border: 1px solid currentcolor;
+  background: $color-white;
+  color: inherit;
+}
+
+button, [type='button'], [type='reset'], [type='submit'],
+[for],
+[type='checkbox'], [type='radio'] {
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: gs-is-typegrid(gs-spacer(0.75), 30px);
+  font-family: $font-heading;
+}
+
+hr {
+  margin: gs-is-typegrid(gs-spacer(0.5), 20px) 0;
+}
+
+select {
+  color: inherit;
+}
+
+[type='checkbox'], [type='radio'] {
+  background: initial;
+}

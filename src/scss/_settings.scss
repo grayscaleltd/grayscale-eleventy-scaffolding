@@ -1,0 +1,48 @@
+@import 'theme-core/breakpoints';
+@import 'theme-core/mixins';
+
+// Breakpoints: refer to _breakpoints.scss for value sets
+$breakpoints-custom: (
+  'mini':   0,
+  'small':  640,
+  'medium': 768,
+  'large':  960,
+  'xlarge': 1200,
+);
+
+$breakpoints-model: $breakpoints-custom; // or 'breakpoints-uikit2', 'breakpoints-uikit3', 'breakpoints-foundation'
+
+// Colours
+$color-black:   #222;
+$color-white:   #fff;
+
+$color-major:   #3722ae;
+$color-minor:   #7c01fd;
+
+// Font Family
+$font-heading:  '', sans-serif; // 700
+$font-content:  '', sans-serif; // 400
+
+// Font Sizes
+$typegrid: true;
+
+$font-size-roots: (
+  14px,
+  14px,
+  16px,
+  18px,
+  18px,
+);
+
+$font-leading-ratio: 1.5; // (typegrid) ? (Leading ÷ font size) : line-height;
+
+// Grid
+$grid-wrapper-max-width: 1200;
+$grid-column-count: 12;
+$grid-gutter: (
+  20px,
+  20px,
+  30px,
+  40px,
+  40px,
+);

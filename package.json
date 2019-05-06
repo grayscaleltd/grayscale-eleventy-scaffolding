@@ -1,0 +1,51 @@
+{
+  "name": "grayscale-eleventy-scaffolding",
+  "version": "1.0.0",
+  "description": "Basic workflow for developing Eleventy-based website at Grayscale",
+  "scripts": {
+    "serve": "npm run dev",
+    "dev": "gulp serve & ELEVENTY_ENV=development eleventy --serve",
+    "build": "gulp build & ELEVENTY_ENV=production eleventy"
+  },
+  "keywords": [
+    "eleventy",
+    "scaffolding",
+    "site-generator"
+  ],
+  "homepage": "https://grayscale.com.hk/",
+  "author": "Aceler Chua <aceler.chua@grayscale.com.hk>",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.8.3",
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "autoprefixer": "^9.5.0",
+    "babel-eslint": "^10.0.1",
+    "browser-sync": "^2.26.3",
+    "chalk": "^2.4.2",
+    "cssnano": "^4.1.10",
+    "del": "^4.1.0",
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.12.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-changed": "^3.2.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-touch-cmd": "0.0.1",
+    "gulp-uglify": "^3.0.2",
+    "node-normalize-scss": "^8.0.0",
+    "require-dir": "^1.2.0",
+    "sass": "^1.17.3",
+    "yargs": "^13.2.2"
+  },
+  "dependencies": {
+    "npm-check-updates": "^3.1.9"
+  }
+}

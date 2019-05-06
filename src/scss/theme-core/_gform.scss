@@ -1,0 +1,27 @@
+@import 'settings';
+
+// CSS Class Reference: http://www.gravityplugins.com/wp-content/uploads/2013/09/Gravity_Forms_CSS_Visual_Guide.png
+
+.gform_anchor {
+  @extend %sr-only;
+}
+
+.gform_fields {
+  @extend %list-reset;
+}
+
+.gform_hidden {
+  @extend %sr-only;
+}
+
+.gfield_checkbox, .gfield_radio {
+  @extend %list-reset;
+}
+
+.gfield_visibility_hidden {
+  @extend %sr-only;
+}
+
+.gform_validation_container {
+  display: none;
+}
