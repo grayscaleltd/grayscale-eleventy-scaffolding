@@ -9,18 +9,15 @@ require('require-dir')('./tasks');
 // -----
 
 // Watch for changes in assets, scripts, and styles
-gulp.task('watch', gulp.series(
-    gulp.parallel(
-        gulp.watch(config.assets.src, gulp.parallel('assets')),
-        gulp.watch(config.styles.src, gulp.parallel('styles')),
-        gulp.watch(config.styles.src, gulp.parallel('scripts')),
-    ),
-    () => {
-      console.log(chalk.green('--------------------'));
-      console.log(chalk.green('Watch is ready...'));
-      console.log(chalk.green('--------------------'));
-    },
-));
+gulp.task('watch', () => {
+  gulp.watch(config.assets.src, gulp.parallel('assets')),
+  gulp.watch(config.styles.src, gulp.parallel('styles')),
+  gulp.watch(config.scripts.src, gulp.parallel('scripts')),
+
+  console.log(chalk.green('--------------------'));
+  console.log(chalk.green('Watch is ready...'));
+  console.log(chalk.green('--------------------'));
+});
 
 // Build a working copy
 gulp.task('build', gulp.series(

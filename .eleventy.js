@@ -1,11 +1,15 @@
 module.exports = function(config) {
-
   // A useful way to reference to the contect we are runing eleventy in
-  let env = process.env.ELEVENTY_ENV;
+  const env = process.env.ELEVENTY_ENV;
 
   // minify the html output
-  config.addTransform("htmlmin", require("./src/utils/minify-html.js"));
+  // config.addTransform("htmlmin", require("./src/utils/minify-html.js"));
 
+  // set up liquid
+  config.setLiquidOptions({
+    dynamicPartials: true,
+    // strict_filters: true
+  });
 
   // pass some assets right through
   config.addPassthroughCopy("./src/site/assets");
@@ -17,7 +21,7 @@ module.exports = function(config) {
       data: `_data/${env}`
     },
     templateFormats : ["html", "liquid", "md"],
-    passthroughFileCopy: true
+    passthroughFileCopy: true,
+    env: env,
   };
-
 };

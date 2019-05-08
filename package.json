@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Basic workflow for developing Eleventy-based website at Grayscale",
   "scripts": {
+    "init": "gulp build",
     "serve": "npm run dev",
     "dev": "gulp serve & ELEVENTY_ENV=development eleventy --serve",
-    "build": "gulp build & ELEVENTY_ENV=production eleventy"
+    "build": "gulp build --production && ELEVENTY_ENV=production eleventy"
   },
   "keywords": [
     "eleventy",
@@ -30,6 +31,7 @@
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-changed": "^3.2.0",
+    "gulp-concat": "^2.6.1",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^5.0.3",
     "gulp-load-plugins": "^1.5.0",
@@ -44,8 +46,5 @@
     "require-dir": "^1.2.0",
     "sass": "^1.17.3",
     "yargs": "^13.2.2"
-  },
-  "dependencies": {
-    "npm-check-updates": "^3.1.9"
   }
 }
