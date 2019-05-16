@@ -14,6 +14,9 @@ module.exports = function(config) {
   // pass some assets right through
   config.addPassthroughCopy("./src/site/assets");
 
+  // not use gitignore
+  config.setUseGitIgnore(false);
+
   return {
     dir: {
       input: "src/site",
