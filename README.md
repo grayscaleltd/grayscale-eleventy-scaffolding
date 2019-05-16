@@ -1,6 +1,6 @@
 # Grayscale Eleventy Scaffolding
 
-## Version 1.0.0
+## Version 1.0.1
 
 ## System Requirement
 
@@ -18,7 +18,7 @@ The package comes with linter files to maintain code style and you are encourage
 ## Setup
 
 1. Run `npm install` in the terminal to install the dev dependencies
-2. Run `npm init` in the terminal to initialise build process
+2. Run `npm run init` in the terminal to initialise build process
 3. Edit base configurations in `/src/site/_data/siteconfig.js`
 4. Set up environment based config files in `/src/site/_data`
 
