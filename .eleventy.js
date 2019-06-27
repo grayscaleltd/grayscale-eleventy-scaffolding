@@ -1,7 +1,4 @@
 module.exports = function(config) {
-  // A useful way to reference to the contect we are runing eleventy in
-  const env = process.env.ELEVENTY_ENV;
-
   // minify the html output
   // config.addTransform("htmlmin", require("./src/utils/minify-html.js"));
 
@@ -21,10 +18,10 @@ module.exports = function(config) {
     dir: {
       input: "src/site",
       output: "dist",
-      data: `_data/${env}`
+      data: `_data`
     },
     templateFormats : ["html", "liquid", "md"],
     passthroughFileCopy: true,
-    env: env,
+    env: process.env.ELEVENTY_ENV,
   };
 };

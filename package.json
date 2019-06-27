@@ -1,6 +1,6 @@
 {
   "name": "grayscale-eleventy-scaffolding",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Basic workflow for developing Eleventy-based website at Grayscale",
   "scripts": {
     "init": "gulp build",
