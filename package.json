@@ -1,50 +1,53 @@
 {
   "name": "grayscale-eleventy-scaffolding",
   "version": "1.1.0",
-  "description": "Basic workflow for developing Eleventy-based website at Grayscale",
-  "scripts": {
-    "init": "gulp build",
-    "serve": "npm run dev",
-    "dev": "gulp serve & ELEVENTY_ENV=development eleventy --serve",
-    "build": "gulp build --production && ELEVENTY_ENV=production eleventy"
-  },
-  "keywords": [
-    "eleventy",
-    "scaffolding",
-    "site-generator"
-  ],
-  "homepage": "https://grayscale.com.hk/",
   "author": "Aceler Chua <aceler.chua@grayscale.com.hk>",
   "license": "MIT",
+  "repository": "bitbucket:grayscaleltd/grayscale-project-scaffolding",
+  "homepage": "https://grayscale.com.hk/",
+  "private": true,
   "devDependencies": {
-    "@11ty/eleventy": "^0.8.3",
-    "@babel/core": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
-    "autoprefixer": "^9.5.0",
-    "babel-eslint": "^10.0.1",
-    "browser-sync": "^2.26.3",
-    "chalk": "^2.4.2",
+    "@11ty/eleventy": "^0.11.0",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "autoprefixer": "^9.8.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "chalk": "^4.0.0",
     "cssnano": "^4.1.10",
-    "del": "^4.1.0",
-    "eslint": "^5.16.0",
-    "eslint-config-google": "^0.12.0",
-    "gulp": "^4.0.0",
-    "gulp-babel": "^8.0.0",
-    "gulp-changed": "^3.2.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^5.0.3",
-    "gulp-load-plugins": "^1.5.0",
+    "del": "^5.1.0",
+    "eslint": "^7.1.0",
+    "eslint-config-google": "^0.14.0",
+    "glob": "^7.1.6",
+    "gulp": "^4.0.2",
+    "gulp-changed": "^4.0.2",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.1.0",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-touch-cmd": "0.0.1",
-    "gulp-uglify": "^3.0.2",
-    "node-normalize-scss": "^8.0.0",
+    "normalize.css": "^8.0.1",
+    "postcss-calc": "^7.0.2",
     "require-dir": "^1.2.0",
-    "sass": "^1.17.3",
-    "yargs": "^13.2.2"
+    "sass": "^1.26.7",
+    "webpack": "^4.43.0",
+    "yargs": "^15.3.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 9"
+  ],
+  "scripts": {
+    "init": "gulp build --production",
+    "serve": "gulp watch & ELEVENTY_ENV=development eleventy --serve",
+    "build": "gulp build --production && ELEVENTY_ENV=production eleventy"
   }
 }

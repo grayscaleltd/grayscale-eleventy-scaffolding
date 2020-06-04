@@ -1,4 +1,4 @@
-module.exports = function(config) {
+module.exports = (config) => {
   // minify the html output
   // config.addTransform("htmlmin", require("./src/utils/minify-html.js"));
 
