@@ -1,31 +1,31 @@
-@import 'theme-core/breakpoints';
-@import 'theme-core/mixins';
+@import 'core/helpers';
+@import 'core/mixins';
 
-// Breakpoints: refer to _breakpoints.scss for value sets
-$breakpoints-custom: (
-  'mini':   0,
-  'small':  640,
-  'medium': 768,
-  'large':  960,
-  'xlarge': 1200,
+// Breakpoints
+$breakpoints-model: (
+  'small':    0,
+  'medium':   640,
+  'large':    1024,
+  'xlarge':   1200,
+  'xxlarge':  1440,
 );
 
-$breakpoints-model: $breakpoints-custom; // or 'breakpoints-uikit2', 'breakpoints-uikit3', 'breakpoints-foundation'
-
 // Colours
-$color-black:   #222;
-$color-white:   #fff;
+$color-black: #222;
+$color-white: #fff;
+$color-shade: lighten($color-black, 80%);
 
-$color-major:   #3722ae;
-$color-minor:   #7c01fd;
+$color-major: #181231;
+$color-minor: #7c01fd;
+
+$color-bg: $color-white;
+$color-text: $color-black;
 
 // Font Family
-$font-heading:  '', sans-serif; // 700
-$font-content:  '', sans-serif; // 400
+$font-heading: sans-serif; // 700
+$font-content: sans-serif; // 400
 
 // Font Sizes
-$typegrid: true;
-
 $font-size-roots: (
   14px,
   14px,
@@ -34,15 +34,7 @@ $font-size-roots: (
   18px,
 );
 
-$font-leading-ratio: 1.5; // (typegrid) ? (Leading ÷ font size) : line-height;
+$font-line-height: 1.5;
 
-// Grid
-$grid-wrapper-max-width: 1200;
-$grid-column-count: 12;
-$grid-gutter: (
-  20px,
-  20px,
-  30px,
-  40px,
-  40px,
-);
+// Project Specific
+$wrapper-max-width: 60rem;
