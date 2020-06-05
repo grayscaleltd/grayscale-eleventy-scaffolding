@@ -46,7 +46,7 @@
     "ie >= 9"
   ],
   "scripts": {
-    "init": "gulp build --production",
+    "init": "gulp build",
     "serve": "gulp watch & ELEVENTY_ENV=development eleventy --serve",
     "build": "gulp build --production && ELEVENTY_ENV=production eleventy"
   }

@@ -58,7 +58,7 @@ function scriptsDefault(cb) {
       path: path.resolve(__dirname, '../'),
       filename: '[name].js',
     },
-    watch: (!args.production),
+    watch: (process.argv.includes('watch')),
   }, (err, stats) => {
     if (stats.hasErrors()) {
       console.log(stats.toJson());
