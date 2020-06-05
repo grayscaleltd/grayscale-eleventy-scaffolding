@@ -33,6 +33,9 @@
     "postcss-calc": "^7.0.2",
     "require-dir": "^1.2.0",
     "sass": "^1.26.7",
+    "stylelint": "^13.6.0",
+    "stylelint-config-sass-guidelines": "^7.0.0",
+    "stylelint-config-standard": "^20.0.0",
     "webpack": "^4.43.0",
     "yargs": "^15.3.1"
   },
