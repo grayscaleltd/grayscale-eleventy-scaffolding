@@ -1,48 +1,22 @@
 const config = require('../gulpconfig').scripts;
 
+const chalk = require('chalk');
 const args = require('yargs').argv;
 const glob = require('glob');
 const gulp = require('gulp');
 const path = require('path');
 const webpack = require('webpack');
-// Vue
-// ---
-// const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 function scriptsDefault(cb) {
   webpack({
     mode: (args.production) ? 'production' : 'development',
-    devtool: (args.production) ? '' : 'source-map',
+    devtool: (args.production) ? false : 'eval-source-map',
     module: {
       rules: [{
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
-      },
-      // Vue
-      // ---
-      // {
-      //   test: /\.vue$/,
-      //   loader: 'vue-loader',
-      // },
-      // {
-      //   test: /\.css$/,
-      //   use: [
-      //     'vue-style-loader',
-      //     'css-loader',
-      //   ],
-      // },
-      ],
+      }],
     },
-    // Vue
-    // ---
-    // plugins: [
-    //   new VueLoaderPlugin(),
-    // ],
-    // resolve: {
-    //   alias: {
-    //     'vue$': 'vue/dist/vue.esm.js',
-    //   },
-    // },
     context: path.resolve(__dirname, '../'),
     entry: () => {
       const entries = {};
@@ -60,9 +34,16 @@ function scriptsDefault(cb) {
     },
     watch: (process.argv.includes('watch')),
   }, (err, stats) => {
-    if (stats.hasErrors()) {
-      console.log(stats.toJson());
-    }
+    const statOptions = {
+      preset: 'minimal',
+      builtAt: true,
+      colors: true,
+      modules: false,
+      timings: true,
+    };
+
+    console.error(`[${chalk.blue('webpack')}]`);
+    console.error(stats.toString(statOptions));
 
     cb();
   });

@@ -1,4 +1,4 @@
-{% include 'header.html' %}
+{% include 'components/header.njk' %}
 
   <div class="content-block">
 
@@ -6,7 +6,7 @@
 
       <main id="main">
 
-        {{ content }}
+        {{ content | safe }}
 
       </main>
 
@@ -14,4 +14,4 @@
 
   </div>
 
-{% include 'footer.html' %}
+{% include 'components/footer.njk' %}

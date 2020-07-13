@@ -8,15 +8,15 @@
   "private": true,
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
-    "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2",
-    "autoprefixer": "^9.8.0",
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "autoprefixer": "^9.8.5",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
-    "chalk": "^4.0.0",
+    "chalk": "^4.1.0",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
-    "eslint": "^7.1.0",
+    "eslint": "^7.4.0",
     "eslint-config-google": "^0.14.0",
     "glob": "^7.1.6",
     "gulp": "^4.0.2",
@@ -29,15 +29,18 @@
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-touch-cmd": "0.0.1",
+    "lodash": "^4.17.19",
+    "markdown-it": "^11.0.0",
+    "markdown-it-implicit-figures": "^0.10.0",
     "normalize.css": "^8.0.1",
     "postcss-calc": "^7.0.2",
     "require-dir": "^1.2.0",
-    "sass": "^1.26.7",
-    "stylelint": "^13.6.0",
+    "sass": "^1.26.10",
+    "stylelint": "^13.6.1",
     "stylelint-config-sass-guidelines": "^7.0.0",
     "stylelint-config-standard": "^20.0.0",
-    "webpack": "^4.43.0",
-    "yargs": "^15.3.1"
+    "webpack": "next",
+    "yargs": "^15.4.1"
   },
   "babel": {
     "presets": [
@@ -50,7 +53,7 @@
   ],
   "scripts": {
     "init": "gulp build",
-    "serve": "gulp watch & ELEVENTY_ENV=development eleventy --serve",
-    "build": "gulp build --production && ELEVENTY_ENV=production eleventy"
+    "serve": "gulp watch",
+    "build": "gulp build --production"
   }
 }

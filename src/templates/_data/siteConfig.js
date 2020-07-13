@@ -8,4 +8,7 @@ const baseConfig = {
   'environment': env,
 };
 
-module.exports = Object.assign(baseConfig, envConfig);
+module.exports = {
+  ...baseConfig,
+  ...envConfig,
+};
