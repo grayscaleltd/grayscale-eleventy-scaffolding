@@ -1,26 +1,61 @@
-module.exports = function(config) {
-  // minify the html output
-  // config.addTransform("htmlmin", require("./src/utils/minify-html.js"));
+const markdownItImplecitFigure = require('markdown-it-implicit-figures');
+const {countBy, find, filter} = require('lodash');
 
-  // set up liquid
-  config.setLiquidOptions({
+module.exports = (eleventyConfig) => {
+  // Eleventy general
+  // ---
+  // Minify the html output
+  // eleventyConfig.addTransform('htmlmin', require('./src/utils/minify-html.js'));
+
+  // Pass some assets right through
+  eleventyConfig.addPassthroughCopy('./src/templates/assets');
+
+  // Not use gitignore
+  eleventyConfig.setUseGitIgnore(false);
+
+  // Enable data deep merge
+  eleventyConfig.setDataDeepMerge(true);
+
+  // Markdown
+  // ---
+  // Use Markdown it
+  const markdownIt = require('markdown-it');
+  const options = {
+    html: true,
+  };
+
+  const markdownLib = markdownIt(options);
+
+  // Set up implicit figures for md files
+  markdownLib.use(markdownItImplecitFigure);
+
+  // Set markdown library
+  eleventyConfig.setLibrary('md', markdownLib);
+
+  // Liquid
+  // ---
+  // Set up liquid
+  eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
     // strict_filters: true
   });
 
-  // pass some assets right through
-  config.addPassthroughCopy("./src/site/assets");
-
-  // not use gitignore
-  config.setUseGitIgnore(false);
+  // Custom filters
+  // ---
+  // Match by key value pair
+  eleventyConfig.addFilter('where',
+    (data, key, value) => filter(data, [key, value])
+  );
 
   return {
     dir: {
-      input: "src/site",
-      output: "dist",
-      data: `_data`
+      input: 'src/templates',
+      output: 'dist',
+      data: '_data'
     },
-    templateFormats : ["html", "liquid", "md"],
+    templateFormats : ['html', 'md', 'njk'],
+    markdownTemplateEngine: 'njk',
+    htmlTemplateEngine: 'njk',
     passthroughFileCopy: true,
     env: process.env.ELEVENTY_ENV,
   };

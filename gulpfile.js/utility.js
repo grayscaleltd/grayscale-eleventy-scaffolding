@@ -1,8 +1,9 @@
-const gulp = require('gulp');
 const config = require('../gulpconfig').utility;
 
 const del = require('del');
 
-gulp.task('utility-clean', () => {
+function clean() {
   return del(config.clean);
-});
+}
+
+exports.clean = clean;

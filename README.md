@@ -1,6 +1,4 @@
-# Grayscale Eleventy Scaffolding
-
-## Version 1.1.0
+# How to use this scaffolding?
 
 ## System Requirement
 
@@ -13,13 +11,20 @@ To run this workflow, you should have the following installed globally. If you a
 The package comes with linter files to maintain code style and you are encouraged to have the below linters installed.
 
 * [ESLint](https://eslint.org/)
-* [Sass Lint](https://github.com/sasstools/sass-lint)
+* [Style Lint](https://stylelint.io/)
+
+## File formats
+
+Even though all files are run through with the [Nunjucks](https://mozilla.github.io/nunjucks/) template engine, different file formats should be applied to files to indicate their purpose.
+
+* Layout files should have the `.html` suffix
+* Component files should have the `.njk` suffix
 
 ## Setup
 
 1. Run `npm install` in the terminal to install the dev dependencies
 2. Run `npm run init` in the terminal to initialise build process
-3. Edit base configurations in `/src/site/_data/siteconfig.js`
+3. Edit base configurations in `/src/site/_data/siteConfig.js`
 4. Set up environment based config files in `/src/site/_data`
 
 ## Development

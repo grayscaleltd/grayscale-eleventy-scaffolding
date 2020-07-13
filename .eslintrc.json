@@ -1,0 +1,10 @@
+{
+  "parser": "babel-eslint",
+  "extends": "google",
+  "rules": {
+    "require-jsdoc": "off"
+  },
+  "globals": {
+    "jQuery": "readonly"
+  }
+}

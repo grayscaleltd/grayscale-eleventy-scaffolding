@@ -6,6 +6,9 @@ const baseConfig = {
   'description': 'Basic workflow for developing Eleventy-based website at Grayscale',
   'textDomain': 'grayscale',
   'environment': env,
-}
+};
 
-module.exports = Object.assign(baseConfig, envConfig);
+module.exports = {
+  ...baseConfig,
+  ...envConfig,
+};

@@ -1,9 +1,5 @@
 const src = './src/';
-const dist = './src/site/';
-const browsersupport = [
-  'last 2 versions',
-  'ie >= 9',
-];
+const dist = './src/templates/';
 
 module.exports = {
   assets: {
@@ -11,33 +7,39 @@ module.exports = {
     dest: dist + 'assets',
   },
 
+  browsersync: {
+    // files: [
+    //   dist + '**/*',
+    //   '!**/*.map',
+    // ],
+    server: './dist/',
+    open: false,
+    port: 8080,
+    // reloadDelay: 2000,
+  },
+
   scripts: {
     src: src + 'js/*.js',
     dest: dist + '_includes/js',
-    browser: browsersupport,
   },
 
-  // setup: {
-  //   dep: [
-  //     'https://wordpress.org/latest.zip',
-  //     'https://github.com/studio24/wordpress-multi-env-config/archive/master.zip',
-  //   ],
-  //   dest: dist,
-  // },
-
   styles: {
-    src: src + 'scss/*.scss',
-    dest: dist + '_includes/css',
-    browser: browsersupport,
     includePaths: [
-      'node_modules/node-normalize-scss',
+      'node_modules/normalize.css',
     ],
+    src: src + 'scss/**/*.scss',
+    dest: dist + '_includes/css',
+  },
+
+  eleventy: {
+    src: src + 'templates/**/*',
   },
 
   utility: {
     clean: [
       '**/.DS_Store',
       '**/Thumbs.db',
+      dist + '**/*.map',
     ],
   },
 };

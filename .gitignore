@@ -1,8 +1,9 @@
 # Compiled
 httpdocs
 dist
-src/site/_includes/css/**
-src/site/_includes/js/**
+src/templates/_includes/css/**
+src/templates/_includes/js/**
+src/templates/assets/**
 
 # Legacy
 _legacy
