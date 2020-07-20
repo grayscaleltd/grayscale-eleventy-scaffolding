@@ -7,7 +7,7 @@ function eleventyDefault(cb) {
       'ELEVENTY_ENV=production' :
       'ELEVENTY_ENV=development';
 
-  const command = `${env} eleventy --quiet`;
+  const command = `${env} npx @11ty/eleventy --quiet`;
 
   exec(command, (err, stdout, stderr) => {
     if (err) {
