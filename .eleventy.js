@@ -1,5 +1,5 @@
 const markdownItImplecitFigure = require('markdown-it-implicit-figures');
-const {countBy, find, filter} = require('lodash');
+const _ = require('lodash');
 
 module.exports = (eleventyConfig) => {
   // Eleventy general
@@ -44,7 +44,7 @@ module.exports = (eleventyConfig) => {
   // ---
   // Match by key value pair
   eleventyConfig.addFilter('where',
-    (data, key, value) => filter(data, [key, value])
+    (data, key, value) => _.filter(data, [key, value])
   );
 
   return {

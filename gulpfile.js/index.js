@@ -17,6 +17,7 @@ exports.styles = styles;
 exports.build = gulp.series(
     clean,
     gulp.parallel(assets, scripts, styles),
+    eleventy
 );
 
 exports.watch = gulp.parallel(
